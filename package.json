@@ -1,11 +1,11 @@
 {
-  "name": "with-typescript",
+  "name": "next-starter",
   "version": "1.0.0",
   "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "type-check": "tsc"
+    "lint": "eslint . --ext .ts,.tsx --fix"
   },
   "dependencies": {
     "next": "latest",
@@ -16,7 +16,31 @@
     "@types/node": "^12.12.21",
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.20.0",
+    "@typescript-eslint/parser": "^4.20.0",
+    "eslint": "^7.23.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.23.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1",
     "typescript": "4.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "yarn lint",
+      "prettier --write"
+    ]
   },
   "license": "MIT"
 }
