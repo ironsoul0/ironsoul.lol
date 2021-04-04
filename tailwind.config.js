@@ -20,6 +20,9 @@ module.exports = {
         700: "#7899FB",
         900: "#3C6CFF",
       },
+      black: {
+        900: "#000000",
+      },
       pink: "#EEE8F6",
     },
     extend: {

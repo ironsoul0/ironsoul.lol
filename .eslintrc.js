@@ -33,6 +33,7 @@ module.exports = {
     "@typescript-eslint/ban-ts-ignore": "off",
     "@typescript-eslint/no-var-requires": "off",
     "jsx-a11y/anchor-is-valid": "off",
+    "jsx-a11y/no-onchange": "off",
   },
   settings: {
     react: {
