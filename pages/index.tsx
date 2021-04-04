@@ -27,7 +27,7 @@ const IndexPage = () => {
         Toggle dark mode
       </button>
       <h1 className="font-bold">Hello Next.js</h1>
-      <p>Most opinionated Next.js setup</p>
+      <p className="text-5xl">Most opinionated Next.js setup</p>
       <p>{t("title")}</p>
     </div>
   );
