@@ -35,9 +35,11 @@ export const Header: FC = () => {
   );
 
   return (
-    <Container className="flex items-center justify-between pt-9">
+    <Container className="flex items-center justify-between pt-5 md:pt-9">
       <Link href="/">
-        <a className="text-2xl font-bold dark:text-white-900">ironsoul</a>
+        <a className="text-2xl font-bold text-black-900 dark:text-white-900">
+          ironsoul
+        </a>
       </Link>
       <div className="flex items-center">
         <button

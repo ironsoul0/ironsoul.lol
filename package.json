@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "clsx": "^1.1.1",
+    "framer-motion": "^4.1.2",
     "next": "latest",
     "next-i18next": "^8.1.3",
     "next-themes": "^0.0.14",

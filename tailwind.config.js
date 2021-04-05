@@ -22,12 +22,16 @@ module.exports = {
       },
       black: {
         900: "#000000",
+        700: "#404040",
       },
       pink: "#EEE8F6",
     },
     extend: {
       fontFamily: {
         sans: ["Rubik", ...defaultTheme.fontFamily.sans],
+      },
+      fontSize: {
+        "5xl": "2.8125rem",
       },
     },
   },
