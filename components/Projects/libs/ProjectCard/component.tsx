@@ -43,22 +43,22 @@ export const ProjectCard: FC<Props> = ({
           {description}
         </p>
         <div
-          className={clsx(
-            "flex md:mb-4 mb-2 gap-5 md:gap-8",
-            rightShift && "md:justify-end"
-          )}
+          className={clsx("flex md:mb-4 mb-2", rightShift && "md:justify-end")}
         >
-          {technologies.map((tech) => (
+          {technologies.map((tech, i) => (
             <p
-              className="text-base md:text-xl dark:text-white-700 text-black-700"
+              className={clsx(
+                "text-base md:text-xl dark:text-white-700 text-black-700",
+                i !== technologies.length - 1 && "mr-5 md:mr-8"
+              )}
               key={tech}
             >
               {tech}
             </p>
           ))}
         </div>
-        <div className={clsx("flex gap-4", rightShift && "md:justify-end")}>
-          <MediaIcon icon={<FaGithub />} href={githubLink} />
+        <div className={clsx("flex", rightShift && "md:justify-end")}>
+          <MediaIcon icon={<FaGithub />} href={githubLink} className="mr-4" />
           <MediaIcon icon={<FiExternalLink />} href={externalLink} />
         </div>
       </div>

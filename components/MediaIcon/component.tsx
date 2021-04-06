@@ -1,16 +1,17 @@
+import clsx from "clsx";
 import { motion } from "framer-motion";
 import React, { cloneElement, FC } from "react";
 
 import { Props } from "./props";
 
-export const MediaIcon: FC<Props> = ({ icon, href }: Props) => {
+export const MediaIcon: FC<Props> = ({ icon, href, className }: Props) => {
   return (
     <motion.a
       href={href}
       target="_blank"
       whileHover="hover"
       initial="initial"
-      className="relative"
+      className={clsx("relative", className)}
     >
       <motion.div
         variants={{

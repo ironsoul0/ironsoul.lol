@@ -95,9 +95,17 @@ export const Hero: FC = () => {
           />
         </motion.a>
       </p>
-      <div className="flex mt-8 gap-4">
-        <MediaIcon icon={<FaGithub />} href="https://github.com/ironsoul0" />
-        <MediaIcon icon={<FaTelegram />} href="https://t.me/ironsoul0" />
+      <div className="flex mt-8">
+        <MediaIcon
+          icon={<FaGithub />}
+          href="https://github.com/ironsoul0"
+          className="mr-4"
+        />
+        <MediaIcon
+          icon={<FaTelegram />}
+          href="https://t.me/ironsoul0"
+          className="mr-4"
+        />
         <MediaIcon icon={<FaTwitter />} href="https://twitter.com/ironsoul0" />
       </div>
       <div className="mt-10">
