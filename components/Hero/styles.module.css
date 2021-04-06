@@ -1,7 +1,0 @@
-.description {
-  @apply text-xl md:text-3xl font-bold tracking-normal text-black-700;
-}
-
-:global(.dark) .description {
-  @apply text-white-700;
-}
