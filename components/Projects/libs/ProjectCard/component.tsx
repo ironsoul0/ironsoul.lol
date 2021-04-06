@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { MediaIcon } from "components";
 import React, { FC } from "react";
 import { FaGithub } from "react-icons/fa";
-import { FiExternalLink } from "react-icons/fi";
+import { HiExternalLink } from "react-icons/hi";
 
 import { Props } from "./props";
 import styles from "./styles.module.css";
@@ -48,7 +48,7 @@ export const ProjectCard: FC<Props> = ({
           {technologies.map((tech, i) => (
             <p
               className={clsx(
-                "text-base md:text-xl dark:text-white-700 text-black-700",
+                "text-base  dark:text-white-700 text-black-700",
                 i !== technologies.length - 1 && "mr-5 md:mr-8"
               )}
               key={tech}
@@ -57,9 +57,18 @@ export const ProjectCard: FC<Props> = ({
             </p>
           ))}
         </div>
-        <div className={clsx("flex", rightShift && "md:justify-end")}>
-          <MediaIcon icon={<FaGithub />} href={githubLink} className="mr-4" />
-          <MediaIcon icon={<FiExternalLink />} href={externalLink} />
+        <div
+          className={clsx("flex items-center", rightShift && "md:justify-end")}
+        >
+          <MediaIcon
+            icon={<FaGithub className="w-6 h-6" />}
+            href={githubLink}
+            className="mr-4"
+          />
+          <MediaIcon
+            icon={<HiExternalLink className="mb-0.5 w-7 h-7" />}
+            href={externalLink}
+          />
         </div>
       </div>
       <div

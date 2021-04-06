@@ -1,5 +1,6 @@
 .description {
-  @apply max-w-2xl md:px-8 md:py-6 my-8 text-base md:text-xl rounded-md text-black-700 md:bg-lightTheme;
+  @apply md:px-8 md:py-6 my-8 text-base md:text-base rounded-md text-black-700 md:bg-lightTheme;
+  max-width: 30rem;
 }
 
 .container {

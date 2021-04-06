@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { motion } from "framer-motion";
-import React, { cloneElement, FC } from "react";
+import React, { FC } from "react";
 
 import { Props } from "./props";
 
@@ -24,10 +24,9 @@ export const MediaIcon: FC<Props> = ({ icon, href, className }: Props) => {
             scale: 1.2,
           },
         }}
+        className="text-black-900 dark:text-white-900"
       >
-        {cloneElement(icon, {
-          className: "w-6 h-6 md:w-7 md:h-7 text-black-900 dark:text-white-900",
-        })}
+        {icon}
       </motion.div>
     </motion.a>
   );

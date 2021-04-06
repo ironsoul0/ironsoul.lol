@@ -97,16 +97,19 @@ export const Hero: FC = () => {
       </p>
       <div className="flex mt-8">
         <MediaIcon
-          icon={<FaGithub />}
+          icon={<FaGithub className="w-6 h-6 md:w-7 md:h-7" />}
           href="https://github.com/ironsoul0"
           className="mr-4"
         />
         <MediaIcon
-          icon={<FaTelegram />}
+          icon={<FaTelegram className="w-6 h-6 md:w-7 md:h-7" />}
           href="https://t.me/ironsoul0"
           className="mr-4"
         />
-        <MediaIcon icon={<FaTwitter />} href="https://twitter.com/ironsoul0" />
+        <MediaIcon
+          icon={<FaTwitter className="w-6 h-6 md:w-7 md:h-7" />}
+          href="https://twitter.com/ironsoul0"
+        />
       </div>
       <div className="mt-10">
         <p className="mb-8 text-base md:text-xl dark:text-white-700 text-black-700">

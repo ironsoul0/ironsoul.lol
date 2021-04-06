@@ -28,7 +28,7 @@ export const Section: FC<Props> = ({
       initial="hidden"
       variants={{
         hidden: {
-          y: -30,
+          y: 30,
           opacity: 0,
         },
         visible: {

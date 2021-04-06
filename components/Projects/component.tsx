@@ -18,7 +18,7 @@ const projects = [
     title: "NU Open",
     subtitle: "Freshest ICPC competition",
     description:
-      "Landing page for the biggest ICPC competition held in the walls of Nazarbayev University.",
+      "Landing page for the biggest ICPC competition held in the walls of Nazarbayev University. More than 800 people registered through the website.",
     technologies: ["React", "Gatsby", "Node.js"],
     externalLink: "https://nuopen.kz",
     githubLink: "https://github.com/ironsoul0/nuopen",
