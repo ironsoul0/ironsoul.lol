@@ -52,7 +52,7 @@ export const Header: FC = () => {
             <HiSun className="inline w-6 h-6 text-black-900 dark:text-white-900" />
           )}
         </button>
-        <div className="relative ml-4">
+        <div className="relative ml-2 md:ml-4">
           <select
             value={language}
             className="py-2 pl-3 text-base font-medium rounded appearance-none pr-9 focus:outline-none focus:ring-2 focus:ring-blue-700 bg-none"

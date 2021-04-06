@@ -1,4 +1,4 @@
-import { Container } from "components";
+import { Section } from "components";
 import React, { FC } from "react";
 
 import { ProjectCard } from "./libs/ProjectCard";
@@ -28,21 +28,16 @@ const projects = [
 
 export const Projects: FC = () => {
   return (
-    <div>
-      <Container className="mt-10 md:mt-16">
-        <h2 className="mb-4 text-2xl font-bold md:text-sectionHeader">
-          Projects
-        </h2>
-        <p className="text-base md:text-xl dark:text-white-700 text-black-700">
-          Here are some of my most favorite projects that I enjoyed coding and
-          designing from scratch.
-        </p>
-      </Container>
+    <Section
+      className="md:mt-20 mt-14"
+      title="Projects"
+      description="Here are some of my most favorite projects that I enjoyed coding and designing from scratch."
+    >
       <div className="px-4 mx-auto mt-10 md:mt-20 md:px-8 max-w-screen-lg">
         {projects.map((project, i) => (
           <ProjectCard key={i} rightShift={i % 2 === 0} {...project} />
         ))}
       </div>
-    </div>
+    </Section>
   );
 };
