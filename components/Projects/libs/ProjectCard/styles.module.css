@@ -1,0 +1,17 @@
+.description {
+  @apply max-w-2xl md:px-8 md:py-6 my-8 text-base md:text-xl rounded-md text-black-700 md:bg-lightTheme;
+}
+
+.container {
+  @apply relative mb-10 md:mb-20 md:mt-28 bg-cover;
+}
+
+:global(.dark) .description {
+  @apply md:bg-darkTheme text-white-700;
+}
+
+@media screen and (min-width: 768px) {
+  .description {
+    box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.25);
+  }
+}

@@ -1,16 +1,34 @@
-import { Container } from "components";
+import { Container, MediaIcon } from "components";
 import { motion } from "framer-motion";
 import React, { FC } from "react";
+import { FaGithub, FaTelegram, FaTwitter } from "react-icons/fa";
 
 import { HandWave } from "./libs/HandWave";
 
 export const Hero: FC = () => {
   return (
     <Container>
-      <img
+      <motion.img
         src="/images/me.png"
-        alt="Timka"
+        alt="me"
         className="border border-gray-700 rounded-full w-28 h-28 md:w-32 md:h-32 mt-36"
+        variants={{
+          hidden: {
+            scale: 0,
+            opacity: 0,
+          },
+          visible: {
+            scale: 1,
+            opacity: 1,
+          },
+        }}
+        transition={{
+          damping: 5,
+          mass: 1,
+          delay: 0.2,
+        }}
+        initial="hidden"
+        animate="visible"
       />
       <div className="flex items-center">
         <h1 className="mt-6 mb-6 text-4xl font-bold md:mt-8 md:mb-8 md:text-5xl">
@@ -19,7 +37,7 @@ export const Hero: FC = () => {
         <HandWave className="text-4xl md:text-5xl" />
       </div>
       <p className="text-xl font-bold tracking-normal md:text-3xl text-black-700 dark:text-white-700">
-        Full-stack coder, magician and flexer
+        Full-stack coder, magician and hustler
         <br />
         Currently working full-time at{" "}
         <motion.a
@@ -41,6 +59,10 @@ export const Hero: FC = () => {
                 opacity: 1,
                 y: 0,
               },
+            }}
+            transition={{
+              damping: 2,
+              mass: 3,
             }}
           />
         </motion.a>
@@ -66,9 +88,31 @@ export const Hero: FC = () => {
                 y: 0,
               },
             }}
+            transition={{
+              damping: 2,
+              mass: 3,
+            }}
           />
         </motion.a>
       </p>
+      <div className="flex mt-8 gap-4">
+        <MediaIcon icon={<FaGithub />} href="https://github.com/ironsoul0" />
+        <MediaIcon icon={<FaTelegram />} href="https://t.me/ironsoul0" />
+        <MediaIcon icon={<FaTwitter />} href="https://twitter.com/ironsoul0" />
+      </div>
+      <div className="mt-10">
+        <p className="mb-8 text-base md:text-xl dark:text-white-700 text-black-700">
+          I am a rising junior at Nazarbayev University majoring in CS.
+        </p>
+        <p className="mb-8 text-base md:text-xl dark:text-white-700 text-black-700">
+          I enjoy creating beautiful UIs with a complex logic behind it.
+          <br />
+          My technology stack includes React, TypeScript and GraphQL.
+        </p>
+        <p className="mb-8 text-base md:text-xl dark:text-white-700 text-black-700">
+          I am also currently learning more about Golang and microservices.
+        </p>
+      </div>
     </Container>
   );
 };

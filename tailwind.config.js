@@ -32,6 +32,7 @@ module.exports = {
       },
       fontSize: {
         "5xl": "2.8125rem",
+        sectionHeader: "1.67rem",
       },
     },
   },

@@ -1,9 +1,9 @@
 import { Container } from "components";
-import { ChevronIcon, MoonIcon, SunIcon } from "lib";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useTheme } from "next-themes";
 import React, { ChangeEvent, FC, useCallback, useState } from "react";
+import { HiMoon, HiSun } from "react-icons/hi";
 
 enum Themes {
   light = "light",
@@ -47,9 +47,9 @@ export const Header: FC = () => {
           onClick={toggleTheme}
         >
           {theme === Themes.light ? (
-            <MoonIcon className="inline ml-1 text-white-900 text-black-900" />
+            <HiMoon className="inline w-6 h-6 ml-1 text-black-900 dark:text-white-900" />
           ) : (
-            <SunIcon className="inline text-white-900" />
+            <HiSun className="inline w-6 h-6 text-black-900 dark:text-white-900" />
           )}
         </button>
         <div className="relative ml-4">
@@ -63,7 +63,16 @@ export const Header: FC = () => {
             <option value={Languages.ru}>RU</option>
           </select>
           <span className="absolute top-0 right-0 flex items-center justify-center w-10 h-full text-center pointer-events-none">
-            <ChevronIcon />
+            <svg
+              fill="none"
+              stroke="currentColor"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              className="w-4 h-4"
+              viewBox="0 0 24 24"
+            >
+              <path d="M6 9l6 6 6-6"></path>
+            </svg>
           </span>
         </div>
       </div>
