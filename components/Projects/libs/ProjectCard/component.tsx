@@ -73,17 +73,17 @@ export const ProjectCard: FC<Props> = ({
       </div>
       <div
         className={clsx(
-          "absolute md:right-0 md:w-7/12 md:-top-6 top-0 h-full",
+          "absolute md:right-0 md:w-7/12 md:-top-6 top-0 h-full rounded-lg",
           rightShift && "md:left-0"
         )}
         style={{ zIndex: -1 }}
       >
         <img
-          className="object-cover w-full h-full rounded-lg md:h-auto opacity-30 dark:opacity-40 md:opacity-100"
+          className="object-cover w-full h-full rounded-lg opacity-30 md:h-auto dark:opacity-40 md:opacity-100 md:dark:opacity-80"
           src={imageLink}
           alt={title}
           style={{
-            boxShadow: "0px 4px 40px rgba(0, 0, 0, 0.25)",
+            boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.25)",
           }}
         />
       </div>

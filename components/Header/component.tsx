@@ -44,10 +44,6 @@ export const Header: FC = () => {
 
   useEffect(() => setMounted(true), []);
 
-  if (!mounted) {
-    return <></>;
-  }
-
   return (
     <Container className="flex items-center justify-between pt-5 md:pt-9 text-black-900 dark:text-white-900">
       <Link href="/">
@@ -58,11 +54,13 @@ export const Header: FC = () => {
           className="items-center justify-center w-12 h-12 rounded-md dark:bg-gray-900 bg-pink focus:outline-none focus:ring-2 ring-blue-700 d-flex"
           onClick={toggleTheme}
         >
-          {theme === Themes.light ? (
-            <HiMoon className="inline w-6 h-6 ml-1" />
-          ) : (
-            <HiSun className="inline w-6 h-6" />
-          )}
+          {mounted ? (
+            theme === Themes.light ? (
+              <HiMoon className="inline w-6 h-6 ml-1" />
+            ) : (
+              <HiSun className="inline w-6 h-6" />
+            )
+          ) : null}
         </button>
         <div className="relative ml-2 md:ml-4">
           <select
