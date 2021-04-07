@@ -1,15 +1,16 @@
-import React, { FC } from "react";
+import React, { FC, HTMLAttributes } from "react";
 
-export const OutIcon: FC = () => {
+type Props = HTMLAttributes<HTMLOrSVGElement>;
+
+export const OutIcon: FC<Props> = ({ className }: Props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="w-6 h-6"
+      className={className}
       fill="none"
       viewBox="0 0 24 24"
     >
       <path
-        stroke="#fff"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="2"

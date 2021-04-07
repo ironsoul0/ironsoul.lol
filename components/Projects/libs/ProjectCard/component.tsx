@@ -65,7 +65,10 @@ export const ProjectCard: FC<Props> = ({
             href={githubLink}
             className="mr-4"
           />
-          <MediaIcon icon={<OutIcon />} href={externalLink} />
+          <MediaIcon
+            icon={<OutIcon className="w-6 h-6 stroke-current" />}
+            href={externalLink}
+          />
         </div>
       </div>
       <div
