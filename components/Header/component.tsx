@@ -35,11 +35,9 @@ export const Header: FC = () => {
   );
 
   return (
-    <Container className="flex items-center justify-between pt-5 md:pt-9">
+    <Container className="flex items-center justify-between pt-5 md:pt-9 text-black-900 dark:text-white-900">
       <Link href="/">
-        <a className="text-2xl font-bold text-black-900 dark:text-white-900">
-          ironsoul
-        </a>
+        <a className="text-2xl font-bold">ironsoul</a>
       </Link>
       <div className="flex items-center">
         <button
@@ -47,9 +45,9 @@ export const Header: FC = () => {
           onClick={toggleTheme}
         >
           {theme === Themes.light ? (
-            <HiMoon className="inline w-6 h-6 ml-1 text-black-900 dark:text-white-900" />
+            <HiMoon className="inline w-6 h-6 ml-1" />
           ) : (
-            <HiSun className="inline w-6 h-6 text-black-900 dark:text-white-900" />
+            <HiSun className="inline w-6 h-6" />
           )}
         </button>
         <div className="relative ml-2 md:ml-4">

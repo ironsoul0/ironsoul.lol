@@ -31,7 +31,7 @@ export const Hero: FC = () => {
         animate="visible"
       />
       <div className="flex items-center">
-        <h1 className="mt-6 mb-6 text-4xl font-bold md:mt-8 md:mb-8 md:text-5xl">
+        <h1 className="mt-6 mb-6 text-4xl font-bold md:mt-8 md:mb-8 md:text-5xl text-black-900 dark:text-white-900">
           Hi, I'm Timka!
         </h1>
         <HandWave className="text-4xl md:text-5xl" />

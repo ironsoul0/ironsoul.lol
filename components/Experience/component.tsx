@@ -41,7 +41,7 @@ const skills = [
   },
 ];
 
-export const Skills: FC = () => {
+export const Experience: FC = () => {
   const controls = useAnimation();
   const [ref, inView] = useInView();
 
@@ -57,8 +57,8 @@ export const Skills: FC = () => {
   return (
     <Section
       className="mt-20 mb-16 md:mt-28"
-      title="Skills"
-      description="I am passionate about different technologies. These ones are the things I am most familiar with and build things every day."
+      title="Experience"
+      description="Here are some great places I had honor to work on. I enjoy travelling around the world and looking for new opportunities."
     >
       <Container>
         <div
