@@ -2,7 +2,13 @@ import { Container } from "components";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useTheme } from "next-themes";
-import React, { ChangeEvent, FC, useCallback, useState } from "react";
+import React, {
+  ChangeEvent,
+  FC,
+  useCallback,
+  useEffect,
+  useState,
+} from "react";
 import { HiMoon, HiSun } from "react-icons/hi";
 
 enum Themes {
@@ -16,6 +22,8 @@ enum Languages {
 }
 
 export const Header: FC = () => {
+  const [mounted, setMounted] = useState(false);
+
   const { theme, setTheme } = useTheme();
   const router = useRouter();
   const [language, setLanguage] = useState<string>(
@@ -33,6 +41,12 @@ export const Header: FC = () => {
     },
     [router]
   );
+
+  useEffect(() => setMounted(true), []);
+
+  if (!mounted) {
+    return <></>;
+  }
 
   return (
     <Container className="flex items-center justify-between pt-5 md:pt-9 text-black-900 dark:text-white-900">
