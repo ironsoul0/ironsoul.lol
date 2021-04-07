@@ -10,6 +10,7 @@ import React, {
   useState,
 } from "react";
 import { HiMoon, HiSun } from "react-icons/hi";
+import useSound from "use-sound";
 
 enum Themes {
   light = "light",
@@ -22,6 +23,9 @@ enum Languages {
 }
 
 export const Header: FC = () => {
+  const [playOnDark] = useSound("/sounds/dark-on.mp3");
+  const [playOnLight] = useSound("/sounds/light-on.mp3");
+
   const [mounted, setMounted] = useState(false);
 
   const { theme, setTheme } = useTheme();
@@ -31,8 +35,14 @@ export const Header: FC = () => {
   );
 
   const toggleTheme = useCallback(() => {
+    if (theme === Themes.light) {
+      playOnLight();
+    } else {
+      playOnDark();
+    }
+
     setTheme(theme === Themes.light ? Themes.dark : Themes.light);
-  }, [setTheme, theme]);
+  }, [setTheme, theme, playOnDark, playOnLight]);
 
   const toggleLanguage = useCallback(
     ({ target: { value } }: ChangeEvent<HTMLSelectElement>) => {
