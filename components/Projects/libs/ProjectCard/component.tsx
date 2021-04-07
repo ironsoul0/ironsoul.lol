@@ -2,8 +2,8 @@ import clsx from "clsx";
 import { MediaIcon } from "components";
 import React, { FC } from "react";
 import { FaGithub } from "react-icons/fa";
-import { HiExternalLink } from "react-icons/hi";
 
+import { OutIcon } from "../OutIcon";
 import { Props } from "./props";
 import styles from "./styles.module.css";
 
@@ -65,10 +65,7 @@ export const ProjectCard: FC<Props> = ({
             href={githubLink}
             className="mr-4"
           />
-          <MediaIcon
-            icon={<HiExternalLink className="mb-0.5 w-7 h-7" />}
-            href={externalLink}
-          />
+          <MediaIcon icon={<OutIcon />} href={externalLink} />
         </div>
       </div>
       <div
@@ -79,7 +76,7 @@ export const ProjectCard: FC<Props> = ({
         style={{ zIndex: -1 }}
       >
         <img
-          className="object-cover w-full h-full rounded-lg opacity-30 md:h-auto dark:opacity-40 md:opacity-100 md:dark:opacity-80"
+          className="object-cover w-full h-full rounded-lg opacity-50 md:h-auto dark:opacity-40 md:opacity-100 md:dark:opacity-80"
           src={imageLink}
           alt={title}
           style={{
