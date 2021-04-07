@@ -48,7 +48,7 @@ export const ProjectCard: FC<Props> = ({
           {technologies.map((tech, i) => (
             <p
               className={clsx(
-                "text-base  dark:text-white-700 text-black-700",
+                "text-base dark:text-white-700 text-black-700",
                 i !== technologies.length - 1 && "mr-5 md:mr-8"
               )}
               key={tech}
