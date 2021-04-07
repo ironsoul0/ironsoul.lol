@@ -1,4 +1,12 @@
-import { Experience, Header, Hero, Projects, Skills } from "components";
+import {
+  Contact,
+  Experience,
+  Footer,
+  Header,
+  Hero,
+  Projects,
+  Skills,
+} from "components";
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -15,6 +23,8 @@ const IndexPage = () => {
       <Projects />
       <Skills />
       <Experience />
+      <Contact />
+      <Footer />
     </div>
   );
 };

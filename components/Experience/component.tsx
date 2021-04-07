@@ -1,49 +1,49 @@
 import { Container, Section } from "components";
 import { useAnimation } from "framer-motion";
-import React, { FC, useEffect } from "react";
-import { FaReact } from "react-icons/fa";
-import { SiGraphql, SiNodeDotJs } from "react-icons/si";
+import { useWindowSize } from "lib";
+import React, { FC, useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
-import { EthereumIcon, GoIcon, TsIcon } from "./libs/Icons";
-import { Skill } from "./libs/Skill";
+import { Item } from "./libs/Item";
 
-const skills = [
+const experience = [
   {
-    name: "TypeScript",
-    href: "https://typescriptlang.org",
-    icon: <TsIcon />,
+    title: "React Native Participant",
+    place: "nFactorial Incubator",
+    date: "Jun 2018 - Aug 2020",
   },
   {
-    name: "React",
-    href: "https://reactjs.org",
-    icon: <FaReact color="#00D8FF" />,
+    title: "React Native Participant",
+    place: "nFactorial Incubator",
+    date: "Jun 2018 - Aug 2020",
   },
   {
-    name: "Golang",
-    href: "https://golang.org",
-    icon: <GoIcon />,
+    title: "React Native Participant",
+    place: "nFactorial Incubator",
+    date: "Jun 2018 - Aug 2020",
   },
   {
-    name: "Node.js",
-    href: "https://nodejs.org",
-    icon: <SiNodeDotJs color="#539E43" />,
+    title: "React Native Participant",
+    place: "nFactorial Incubator",
+    date: "Jun 2018 - Aug 2020",
   },
   {
-    name: "Ethereum",
-    href: "https://ethereum.org",
-    icon: <EthereumIcon />,
+    title: "React Native Participant",
+    place: "nFactorial Incubator",
+    date: "Jun 2018 - Aug 2020",
   },
   {
-    name: "GraphQL",
-    href: "https://graphql.org",
-    icon: <SiGraphql color="#E535AB" />,
+    title: "React Native Participant",
+    place: "nFactorial Incubator",
+    date: "Jun 2018 - Aug 2020",
   },
 ];
 
 export const Experience: FC = () => {
   const controls = useAnimation();
   const [ref, inView] = useInView();
+  const { width: windowWidth } = useWindowSize();
+  const [mdScreen, setMdScreen] = useState(true);
 
   useEffect(() => {
     if (inView) {
@@ -54,20 +54,60 @@ export const Experience: FC = () => {
     }
   }, [controls, inView]);
 
+  useEffect(() => {
+    if (!windowWidth) return;
+    setMdScreen(windowWidth >= 768);
+  }, [windowWidth]);
+
   return (
     <Section
       className="mt-20 mb-16 md:mt-28"
       title="Experience"
       description="Here are some great places I had honor to work on. I enjoy travelling around the world and looking for new opportunities."
     >
-      <Container>
-        <div
-          className="max-w-md mt-8 grid grid-cols-2 sm:grid-cols-3 gap-6"
-          ref={ref}
-        >
-          {skills.map((skill, i) => (
-            <Skill {...skill} key={i} custom={i} controls={controls} />
-          ))}
+      <Container className="mt-14">
+        <div className="flex justify-between max-w-screen-sm" ref={ref}>
+          {mdScreen ? (
+            <>
+              <div>
+                {experience.slice(0, 3).map((item, i) => (
+                  <Item
+                    {...item}
+                    key={i}
+                    first={i === 0}
+                    last={i === 2}
+                    controls={controls}
+                    custom={i}
+                  />
+                ))}
+              </div>
+              <div>
+                {experience.slice(3).map((item, i) => (
+                  <Item
+                    {...item}
+                    key={i}
+                    first={i === 0}
+                    last={i === 2}
+                    controls={controls}
+                    custom={i}
+                  />
+                ))}
+              </div>
+            </>
+          ) : (
+            <div>
+              {experience.map((item, i) => (
+                <Item
+                  {...item}
+                  key={i}
+                  first={i === 0}
+                  controls={controls}
+                  last={i === experience.length - 1}
+                  custom={i}
+                />
+              ))}
+            </div>
+          )}
         </div>
       </Container>
     </Section>
