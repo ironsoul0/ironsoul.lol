@@ -69,7 +69,7 @@ export const Header: FC = () => {
       <Container className="flex items-center justify-between w-auto py-5 md:py-9 text-black-900 dark:text-white-900">
         <Link href="/">
           <a href="/">
-            <Logo className="w-20 fill-current md:w-28 dark:text-white-900 text-black-900" />
+            <Logo className="w-24 fill-current md:w-28 dark:text-white-900 text-black-900" />
           </a>
         </Link>
         <div className="flex items-center">
