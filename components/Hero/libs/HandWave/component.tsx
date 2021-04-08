@@ -8,7 +8,7 @@ export const HandWave: FC<Props> = ({ className }: Props) => {
   const [toRotated, setToRotated] = useState(false);
 
   useEffect(() => {
-    const baseDelay = 500;
+    const baseDelay = 1000;
 
     const timers = new Array(4)
       .fill(0)

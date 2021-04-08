@@ -1,4 +1,5 @@
 {
+  "headTitle": "Home | ironsoul",
   "hero": {
     "title": "Hi, I'm Timka!",
     "p0": "Full-stack ninja, magician and hustler",
@@ -37,5 +38,9 @@
     "title": "Wanna reach out?",
     "description": "Feel free to drop me a message if you have some interesting offer or you want to hang out."
   },
-  "currently": "Currently"
+  "currently": "Currently",
+  "citation": {
+    "content": "Ninjas are not born, they are made",
+    "author": "Unknown master"
+  }
 }

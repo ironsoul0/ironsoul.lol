@@ -1,3 +1,4 @@
+export * from "./CitationOverlay";
 export * from "./Contact";
 export * from "./Container";
 export * from "./Experience";
@@ -5,6 +6,7 @@ export * from "./Footer";
 export * from "./Header";
 export * from "./Hero";
 export * from "./Layout";
+export * from "./Logo";
 export * from "./MediaIcon";
 export * from "./Projects";
 export * from "./Section";

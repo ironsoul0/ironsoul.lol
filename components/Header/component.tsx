@@ -1,4 +1,4 @@
-import { Container } from "components";
+import { Container, Logo } from "components";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useTheme } from "next-themes";
@@ -68,7 +68,9 @@ export const Header: FC = () => {
     >
       <Container className="flex items-center justify-between w-auto py-5 md:py-9 text-black-900 dark:text-white-900">
         <Link href="/">
-          <a className="text-xl font-bold md:text-2xl">ironsoul</a>
+          <a href="/">
+            <Logo className="w-20 fill-current md:w-28 dark:text-white-900 text-black-900" />
+          </a>
         </Link>
         <div className="flex items-center">
           <button
