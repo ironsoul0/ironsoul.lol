@@ -7,6 +7,10 @@
     "des0": "I am a rising junior at Nazarbayev University majoring in CS.",
     "des1": "I enjoy creating high-quality software products with a complex logic behind it.",
     "des2": "My technology stack includes React, TypeScript and Golang.",
-    "des3": "I am currently learning more about Ethereum blockchain and cybersecurity."
+    "des3": "I am also currently learning more about Ethereum blockchain and cybersecurity."
+  },
+  "projects": {
+    "title": "Projects",
+    "description": "Here are some of my most favourite projects that I enjoyed coding and designing from scratch, both with a team and alone."
   }
 }

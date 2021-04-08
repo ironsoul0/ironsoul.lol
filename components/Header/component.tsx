@@ -55,47 +55,54 @@ export const Header: FC = () => {
   useEffect(() => setMounted(true), []);
 
   return (
-    <Container className="flex items-center justify-between pt-5 md:pt-9 text-black-900 dark:text-white-900">
-      <Link href="/">
-        <a className="text-2xl font-bold">ironsoul</a>
-      </Link>
-      <div className="flex items-center">
-        <button
-          className="items-center justify-center w-12 h-12 rounded-md dark:bg-gray-900 bg-pink focus:outline-none focus:ring-2 ring-blue-700 d-flex"
-          onClick={toggleTheme}
-        >
-          {mounted ? (
-            theme === Themes.light ? (
-              <HiMoon className="inline w-6 h-6 ml-1" />
-            ) : (
-              <HiSun className="inline w-6 h-6" />
-            )
-          ) : null}
-        </button>
-        <div className="relative ml-2 md:ml-4">
-          <select
-            value={language}
-            className="py-2 pl-3 text-base font-medium rounded appearance-none pr-9 focus:outline-none focus:ring-2 focus:ring-blue-700 bg-none"
-            style={{ backgroundColor: "inherit" }}
-            onChange={toggleLanguage}
+    <div
+      className="sticky top-0 z-40 bg-lightTheme dark:bg-darkTheme dark:bg-opacity-80 bg-opacity-80"
+      style={{
+        backdropFilter: "saturate(180%) blur(10px)",
+      }}
+    >
+      <Container className="flex items-center justify-between w-auto py-5 md:py-9 text-black-900 dark:text-white-900">
+        <Link href="/">
+          <a className="text-xl font-bold md:text-2xl">ironsoul</a>
+        </Link>
+        <div className="flex items-center">
+          <button
+            className="items-center justify-center w-12 h-12 rounded-md dark:bg-gray-900 bg-pink focus:outline-none focus:ring-2 ring-blue-700 d-flex"
+            onClick={toggleTheme}
           >
-            <option value={Languages.en}>EN</option>
-            <option value={Languages.ru}>RU</option>
-          </select>
-          <span className="absolute top-0 right-0 flex items-center justify-center w-10 h-full text-center pointer-events-none">
-            <svg
-              fill="none"
-              stroke="currentColor"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              className="w-4 h-4"
-              viewBox="0 0 24 24"
+            {mounted ? (
+              theme === Themes.light ? (
+                <HiMoon className="inline w-6 h-6 ml-1" />
+              ) : (
+                <HiSun className="inline w-6 h-6" />
+              )
+            ) : null}
+          </button>
+          <div className="relative ml-2 md:ml-4">
+            <select
+              value={language}
+              className="py-2 pl-3 text-base font-medium rounded appearance-none pr-9 focus:outline-none focus:ring-2 focus:ring-blue-700 bg-none"
+              style={{ backgroundColor: "inherit" }}
+              onChange={toggleLanguage}
             >
-              <path d="M6 9l6 6 6-6"></path>
-            </svg>
-          </span>
+              <option value={Languages.en}>EN</option>
+              <option value={Languages.ru}>RU</option>
+            </select>
+            <span className="absolute top-0 right-0 flex items-center justify-center w-10 h-full text-center pointer-events-none">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                className="w-4 h-4"
+                viewBox="0 0 24 24"
+              >
+                <path d="M6 9l6 6 6-6"></path>
+              </svg>
+            </span>
+          </div>
         </div>
-      </div>
-    </Container>
+      </Container>
+    </div>
   );
 };
