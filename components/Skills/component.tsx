@@ -1,5 +1,6 @@
 import { Container, Section } from "components";
 import { useAnimation } from "framer-motion";
+import { useTranslation } from "next-i18next";
 import React, { FC, useEffect } from "react";
 import { FaReact } from "react-icons/fa";
 import { SiGraphql, SiNodeDotJs } from "react-icons/si";
@@ -44,6 +45,7 @@ const skills = [
 export const Skills: FC = () => {
   const controls = useAnimation();
   const [ref, inView] = useInView();
+  const { t } = useTranslation("common");
 
   useEffect(() => {
     if (inView) {
@@ -57,8 +59,8 @@ export const Skills: FC = () => {
   return (
     <Section
       className="mt-20 mb-16 md:mt-28"
-      title="Skills"
-      description="I am passionate about different technologies. These ones are the things I am most familiar with and build things every day."
+      title={t("skills.title")}
+      description={t("skills.description")}
     >
       <Container>
         <div

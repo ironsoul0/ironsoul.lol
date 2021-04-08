@@ -1,7 +1,7 @@
 {
   "hero": {
     "title": "Hi, I'm Timka!",
-    "p0": "Full-stack coder, magician and hustler",
+    "p0": "Full-stack ninja, magician and hustler",
     "p1": "Currently working full-time at",
     "p2": "Upcoming SWE Intern at",
     "des0": "I am a rising junior at Nazarbayev University majoring in CS.",
@@ -11,6 +11,31 @@
   },
   "projects": {
     "title": "Projects",
-    "description": "Here are some of my most favourite projects that I enjoyed coding and designing from scratch, both with a team and alone."
-  }
+    "description": "Here are some of my most favourite projects that I enjoyed coding and designing from scratch, both with a team and alone.",
+    "laddy": {
+      "subtitle": "Get better by solving problems",
+      "description": "Web app selects and lets you solve algorithmic problems of your level by looking at your Codeforces rating."
+    },
+    "nuopen": {
+      "subtitle": "Freshest ICPC competition",
+      "description": "Landing page for the largest open programming competition organized by Nazarbayev University students."
+    },
+    "railwayz": {
+      "subtitle": "Samruk Hackathon Winner",
+      "description": "Accurate prediction of the number of railway carriages required for different routes. \"Best Architecture\" title among all teams. Project made by Janbyr Inc."
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "description": "I am passionate about using cutting-edge technologies. These are the tools I am most familiar with and build things every day."
+  },
+  "experience": {
+    "title": "Experience",
+    "description": "Here are some great companies I had the honour to join for working on various interesting projects."
+  },
+  "contact": {
+    "title": "Wanna reach out?",
+    "description": "Feel free to drop me a message if you have some interesting offer or you want to hang out."
+  },
+  "currently": "Currently"
 }

@@ -9,8 +9,6 @@ import { HandWave } from "./libs/HandWave";
 export const Hero: FC = () => {
   const { t } = useTranslation("common");
 
-  console.log("t: ", t);
-
   return (
     <Container>
       <motion.img

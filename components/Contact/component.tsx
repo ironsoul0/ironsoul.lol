@@ -1,12 +1,15 @@
 import { Container, Section } from "components";
+import { useTranslation } from "next-i18next";
 import React, { FC } from "react";
 
 export const Contact: FC = () => {
+  const { t } = useTranslation("common");
+
   return (
     <Section
       className="mt-20 mb-16 md:mt-28"
-      title="Wanna reach out?"
-      description="Maybe you have some interesting project to work on or just want to hang out? Feel free to drop me a message."
+      title={t("contact.title")}
+      description={t("contact.description")}
     >
       <Container>
         <div className="mt-4">
