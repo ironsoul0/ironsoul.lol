@@ -9,7 +9,7 @@ import { Props } from "./props";
 const textVariants = {
   initial: {
     opacity: 0,
-    y: -8,
+    y: -4,
   },
   visible: {
     opacity: 1,
