@@ -47,9 +47,14 @@ export const Header: FC = () => {
   const toggleLanguage = useCallback(
     ({ target: { value } }: ChangeEvent<HTMLSelectElement>) => {
       setLanguage(value);
+      if (value == Languages.ru) {
+        playOnLight();
+      } else {
+        playOnDark();
+      }
       router.push("/", "/", { locale: value });
     },
-    [router]
+    [playOnLight, playOnDark, router]
   );
 
   useEffect(() => setMounted(true), []);
