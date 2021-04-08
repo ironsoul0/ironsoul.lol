@@ -1,11 +1,16 @@
 import { Container, MediaIcon } from "components";
 import { motion } from "framer-motion";
+import { useTranslation } from "next-i18next";
 import React, { FC } from "react";
 import { FaGithub, FaTelegram, FaTwitter } from "react-icons/fa";
 
 import { HandWave } from "./libs/HandWave";
 
 export const Hero: FC = () => {
+  const { t } = useTranslation("common");
+
+  console.log("t: ", t);
+
   return (
     <Container>
       <motion.img
@@ -32,14 +37,14 @@ export const Hero: FC = () => {
       />
       <div className="flex items-center">
         <h1 className="mt-6 mb-6 text-4xl font-bold md:mt-8 md:mb-8 md:text-5xl text-black-900 dark:text-white-900">
-          Hi, I'm Timka!
+          {t("hero.title")}
         </h1>
         <HandWave className="text-4xl md:text-5xl" />
       </div>
       <p className="text-xl font-bold tracking-normal md:text-3xl text-black-700 dark:text-white-700">
-        Full-stack coder, magician and hustler
+        {t("hero.p0")}
         <br />
-        Currently working full-time at{" "}
+        {t("hero.p1")}{" "}
         <motion.a
           href="https://alabs.team"
           target="_blank"
@@ -67,7 +72,7 @@ export const Hero: FC = () => {
           />
         </motion.a>
         <br />
-        Upcoming SWE Intern at{" "}
+        {t("hero.p2")}{" "}
         <motion.a
           href="https://citadel.com"
           target="_blank"
@@ -113,15 +118,15 @@ export const Hero: FC = () => {
       </div>
       <div className="mt-10">
         <p className="mb-8 text-base md:text-xl dark:text-white-700 text-black-700">
-          I am a rising junior at Nazarbayev University majoring in CS.
+          {t("hero.des0")}
         </p>
         <p className="mb-8 text-base md:text-xl dark:text-white-700 text-black-700">
-          I enjoy creating beautiful UIs with a complex logic behind it.
+          {t("hero.des1")}
           <br />
-          My technology stack includes React, TypeScript and GraphQL.
+          {t("hero.des2")}
         </p>
         <p className="mb-8 text-base md:text-xl dark:text-white-700 text-black-700">
-          I am also currently learning more about Golang and microservices.
+          {t("hero.des3")}
         </p>
       </div>
     </Container>

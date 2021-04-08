@@ -1,5 +1,12 @@
 {
-  "h1": "A second page, to demonstrate routing",
-  "back-to-home": "Back to home",
-  "title": "Second page | next-i18next"
+  "hero": {
+    "title": "Hi, I'm Timka!",
+    "p0": "Full-stack coder, magician and hustler",
+    "p1": "Currently working full-time at",
+    "p2": "Upcoming SWE Intern at",
+    "des0": "I am a rising junior at Nazarbayev University majoring in CS.",
+    "des1": "I enjoy creating high-quality software products with a complex logic behind it.",
+    "des2": "My technology stack includes React, TypeScript and Golang.",
+    "des3": "I am currently learning more about Ethereum blockchain and cybersecurity."
+  }
 }

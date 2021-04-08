@@ -79,7 +79,7 @@ export const ProjectCard: FC<Props> = ({
         style={{ zIndex: -1 }}
       >
         <img
-          className="object-cover w-full h-full rounded-lg opacity-50 md:h-auto dark:opacity-40 md:opacity-100 md:dark:opacity-80"
+          className="object-cover w-full h-full rounded-lg opacity-30 md:h-auto dark:opacity-40 md:opacity-100 md:dark:opacity-80"
           src={imageLink}
           alt={title}
           style={{
