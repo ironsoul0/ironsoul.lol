@@ -22,13 +22,15 @@ export const CitationOverlay: FC<Props> = ({ citation }: Props) => {
 
   return (
     <motion.div
-      className="absolute flex items-center justify-center w-full h-full"
+      className="absolute flex items-center justify-center w-full"
       variants={{
         initial: {
           opacity: 1,
+          height: "100%",
         },
         invisible: {
           opacity: 0,
+          height: 0,
         },
       }}
       transition={{
