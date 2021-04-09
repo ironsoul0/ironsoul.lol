@@ -1,4 +1,5 @@
 import { Container, Logo } from "components";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useTheme } from "next-themes";
@@ -11,6 +12,8 @@ import React, {
 } from "react";
 import { HiMoon, HiSun } from "react-icons/hi";
 import useSound from "use-sound";
+
+import { useHeaderVisible } from "./libs/useHeaderVisible";
 
 enum Themes {
   light = "light",
@@ -25,6 +28,7 @@ enum Languages {
 export const Header: FC = () => {
   const [playOnDark] = useSound("/sounds/dark-on.mp3");
   const [playOnLight] = useSound("/sounds/light-on.mp3");
+  const visible = useHeaderVisible();
 
   const [mounted, setMounted] = useState(false);
 
@@ -60,10 +64,20 @@ export const Header: FC = () => {
   useEffect(() => setMounted(true), []);
 
   return (
-    <div
-      className="sticky top-0 z-40 bg-lightTheme dark:bg-darkTheme dark:bg-opacity-80 bg-opacity-80"
-      style={{
-        backdropFilter: "saturate(180%) blur(10px)",
+    <motion.div
+      className="fixed z-20 w-full bg-lightTheme dark:bg-darkTheme opacity-90"
+      initial="initial"
+      variants={{
+        initial: {
+          top: 0,
+        },
+        hidden: {
+          top: -120,
+        },
+      }}
+      animate={visible ? "initial" : "hidden"}
+      transition={{
+        duration: 0.3,
       }}
     >
       <Container className="flex items-center justify-between w-auto py-5 md:py-9 text-black-900 dark:text-white-900">
@@ -110,6 +124,6 @@ export const Header: FC = () => {
           </div>
         </div>
       </Container>
-    </div>
+    </motion.div>
   );
 };

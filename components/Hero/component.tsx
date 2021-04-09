@@ -10,7 +10,7 @@ export const Hero: FC = () => {
   const { t } = useTranslation("common");
 
   return (
-    <Container>
+    <Container className="pt-24 md:pt-32">
       <motion.img
         src="/images/me.png"
         alt="me"
