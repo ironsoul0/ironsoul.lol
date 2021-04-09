@@ -22,8 +22,8 @@ const IndexPage = () => {
 
   useEffect(() => {
     const ids = [
-      setTimeout(() => setCitation(false), 5200),
-      setTimeout(() => setMain(true), 6000),
+      setTimeout(() => setCitation(false), 4800),
+      setTimeout(() => setMain(true), 5700),
     ];
 
     return () => ids.forEach((id) => clearTimeout(id));

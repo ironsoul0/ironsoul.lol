@@ -9,11 +9,9 @@ import { Props } from "./props";
 const textVariants = {
   initial: {
     opacity: 0,
-    y: -4,
   },
   visible: {
     opacity: 1,
-    y: 0,
   },
 };
 
@@ -46,8 +44,6 @@ export const CitationOverlay: FC<Props> = ({ citation }: Props) => {
           animate="visible"
           transition={{
             delay: 3.0,
-            damping: 10,
-            mass: 10,
             duration: 1.2,
           }}
         >
@@ -60,8 +56,6 @@ export const CitationOverlay: FC<Props> = ({ citation }: Props) => {
           animate="visible"
           transition={{
             delay: 1.0,
-            damping: 10,
-            mass: 10,
             duration: 1.2,
           }}
         >
@@ -74,8 +68,6 @@ export const CitationOverlay: FC<Props> = ({ citation }: Props) => {
           variants={textVariants}
           transition={{
             delay: 2.0,
-            damping: 10,
-            mass: 10,
             duration: 1.2,
           }}
         >
