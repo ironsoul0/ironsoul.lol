@@ -1,5 +1,7 @@
 import clsx from "clsx";
 import { MediaIcon } from "components";
+import { motion } from "framer-motion";
+import { useHover } from "lib";
 import React, { FC } from "react";
 import { FaGithub } from "react-icons/fa";
 
@@ -18,6 +20,8 @@ export const ProjectCard: FC<Props> = ({
   rightShift,
   className,
 }) => {
+  const [hoverRef, isHovered] = useHover<HTMLAnchorElement>();
+
   return (
     <div className={clsx(styles.container, className)} style={{ zIndex: 1 }}>
       <div className="px-6 py-6 md:p-0">
@@ -71,12 +75,22 @@ export const ProjectCard: FC<Props> = ({
           />
         </div>
       </div>
-      <div
+      <motion.div
         className={clsx(
           "absolute md:right-0 md:w-7/12 md:-top-6 top-0 h-full rounded-lg",
           rightShift && "md:left-0"
         )}
         style={{ zIndex: -1 }}
+        variants={{
+          initial: {
+            y: 0,
+          },
+          hovered: {
+            y: -5,
+          },
+        }}
+        animate={isHovered ? "hovered" : "initial"}
+        initial="initial"
       >
         <img
           className="object-cover w-full h-full rounded-lg opacity-30 md:h-auto dark:opacity-40 md:opacity-100 md:dark:opacity-80"
@@ -86,7 +100,18 @@ export const ProjectCard: FC<Props> = ({
             boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.25)",
           }}
         />
-      </div>
+      </motion.div>
+      {/* eslint-disable-next-line jsx-a11y/anchor-has-content */}
+      <a
+        ref={hoverRef}
+        target="_blank"
+        className={clsx(
+          "absolute top-0 h-full rounded-lg md:right-0 md:w-7/12 hidden md:block",
+          rightShift && "md:left-0"
+        )}
+        href={externalLink}
+        rel="noreferrer"
+      />
     </div>
   );
 };
