@@ -28,7 +28,7 @@ export const ProjectCard: FC<Props> = ({
         <div className={clsx(rightShift && "md:text-right")}>
           <a
             href={externalLink}
-            className="text-xl font-bold md:text-2xl"
+            className="text-xl font-bold md:text-2xl dark:text-white-900 text-black-900"
             target="_blank"
             rel="noreferrer"
           >
