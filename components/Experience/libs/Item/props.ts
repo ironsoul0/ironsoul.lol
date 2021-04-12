@@ -8,5 +8,6 @@ export type Props = HTMLAttributes<HTMLDivElement> & {
   custom: number;
   last?: boolean;
   first?: boolean;
+  cancelled?: boolean;
   controls?: AnimationControls;
 };

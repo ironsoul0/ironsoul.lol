@@ -26,6 +26,12 @@ export const Experience: FC = () => {
         date: "Jun 2019 - Aug 2019",
       },
       {
+        title: "STEP Intern",
+        place: "Google, Zurich",
+        date: t("covid19"),
+        cancelled: true,
+      },
+      {
         title: "Ethereum Foundation",
         place: "Blockchain Intern, Remote",
         date: "Jun 2020 - Aug 2020",
@@ -81,7 +87,7 @@ export const Experience: FC = () => {
                     {...item}
                     key={i}
                     first={i === 0}
-                    last={i === 1}
+                    last={i === 2}
                     controls={controls}
                     custom={i}
                   />

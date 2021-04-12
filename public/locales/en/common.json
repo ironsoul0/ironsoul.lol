@@ -2,9 +2,9 @@
   "headTitle": "Home | ironsoul",
   "hero": {
     "title": "Hi, I'm Timka!",
-    "p0": "Full-stack ninja, student and chiller",
+    "p0": "Full-stack ninja, student, indie hacker",
     "p1": "Currently working full-time at",
-    "p2": "Upcoming SWE Intern at",
+    "p2": "Incoming SWE Intern at",
     "des0": "I am a rising junior at Nazarbayev University majoring in CS.",
     "des1": "I enjoy creating high-quality software products with a complex logic behind it.",
     "des2": "My technology stack includes React, TypeScript and Golang.",
@@ -42,5 +42,6 @@
   "citation": {
     "content": "Ninjas are not born, they are made",
     "author": "カンフー・パンダ"
-  }
+  },
+  "covid19": "Postponed due to Covid-19"
 }

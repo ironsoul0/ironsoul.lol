@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import { motion } from "framer-motion";
 import React, { FC } from "react";
+import { RiVirusFill } from "react-icons/ri";
 
 import { Props } from "./props";
 
@@ -12,6 +13,7 @@ export const Item: FC<Props> = ({
   first,
   controls,
   custom,
+  cancelled,
   className,
 }: Props) => {
   return (
@@ -40,7 +42,10 @@ export const Item: FC<Props> = ({
       <div className="ml-8 dark:text-white-700 text-black-700">
         <p className="text-base font-medium">{title}</p>
         <p className="text-base">{place}</p>
-        <p className="text-sm mt-0.5 dark:text-white-500">{date}</p>
+        <p className="flex items-center text-sm mt-0.5 dark:text-white-500">
+          {date}
+          {cancelled && <RiVirusFill className="ml-1" />}
+        </p>
       </div>
     </motion.div>
   );
