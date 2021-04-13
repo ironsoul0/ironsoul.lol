@@ -106,8 +106,18 @@ export const Header: FC = () => {
               style={{ backgroundColor: "inherit" }}
               onChange={toggleLanguage}
             >
-              <option value={Languages.en}>EN</option>
-              <option value={Languages.ru}>RU</option>
+              <option
+                className="text-black-900 dark:text-white-900"
+                value={Languages.en}
+              >
+                EN
+              </option>
+              <option
+                className="text-black-900 dark:text-white-900"
+                value={Languages.ru}
+              >
+                RU
+              </option>
             </select>
             <span className="absolute top-0 right-0 flex items-center justify-center w-10 h-full text-center pointer-events-none">
               <svg
