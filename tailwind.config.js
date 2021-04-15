@@ -28,6 +28,9 @@ module.exports = {
       pink: "#EEE8F6",
     },
     extend: {
+      transitionProperty: {
+        top: "top",
+      },
       fontFamily: {
         sans: ["Rubik", ...defaultTheme.fontFamily.sans],
       },
