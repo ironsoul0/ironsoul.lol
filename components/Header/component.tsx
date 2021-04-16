@@ -59,8 +59,8 @@ export const Header: FC = () => {
     setTheme(theme === Themes.light ? Themes.dark : Themes.light);
   }, [setTheme, theme, playOnDark, playOnLight]);
 
-  const turnOnLangPicker = useCallback(() => {
-    setLangPicker(true);
+  const toggleLangPicker = useCallback(() => {
+    setLangPicker((prev) => !prev);
   }, []);
 
   const turnOffLangPicker = useCallback(() => {
@@ -111,7 +111,7 @@ export const Header: FC = () => {
           <div className="relative ml-2 md:ml-4" ref={ref}>
             <button
               className="py-2 pl-4 text-base font-medium uppercase rounded appearance-none pr-9 focus:outline-none focus:ring-2 focus:ring-blue-700 bg-none"
-              onClick={turnOnLangPicker}
+              onClick={toggleLangPicker}
             >
               {language}
             </button>
