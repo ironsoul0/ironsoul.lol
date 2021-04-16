@@ -1,6 +1,5 @@
 import clsx from "clsx";
 import { Container, Logo } from "components";
-import { AnimatePresence, motion } from "framer-motion";
 import { useOnClickOutside } from "lib";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -70,14 +69,15 @@ export const Header: FC = () => {
   useOnClickOutside(ref, turnOffLangPicker);
 
   const toggleLanguage = useCallback(
-    (language: Languages) => {
+    (newLanguage: Languages) => {
       return () => {
         turnOffLangPicker();
-        setLanguage(language);
-        router.push("/", "/", { locale: language });
+        setLanguage(newLanguage);
+        if (newLanguage !== language)
+          router.push("/", "/", { locale: newLanguage });
       };
     },
-    [router, turnOffLangPicker]
+    [router, turnOffLangPicker, language]
   );
 
   useEffect(() => setMounted(true), []);
@@ -115,47 +115,27 @@ export const Header: FC = () => {
             >
               {language}
             </button>
-            <AnimatePresence>
-              {langPicker && (
-                <motion.div
-                  className="absolute w-full p-1 mt-4 bg-pink dark:bg-white-900 rounded-md text-black-900 transition-all"
-                  initial="hidden"
-                  animate="visible"
-                  exit="hidden"
-                  variants={{
-                    hidden: {
-                      opacity: 1,
-                      y: -2,
-                    },
-                    visible: {
-                      opacity: 1,
-                      y: 0,
-                    },
-                  }}
-                  transition={{ duration: 0.2, type: "spring" }}
-                >
-                  {languages.map((currentLanguage, i) => (
-                    <>
-                      <button
-                        className="block w-full px-2 py-1 text-left hover:bg-white-700 rounded-md transition-colors focus:outline-none"
-                        key={currentLanguage.id}
-                        onClick={toggleLanguage(currentLanguage.id)}
-                      >
-                        <p className={clsx("inline")}>
-                          {currentLanguage.name}{" "}
-                        </p>
-                        <span role="img" aria-label="flag">
-                          {currentLanguage.flag}
-                        </span>
-                      </button>
-                      {i !== languages.length - 1 && (
-                        <div className="my-1 bg-white-700 h-0.5" />
-                      )}
-                    </>
-                  ))}
-                </motion.div>
-              )}
-            </AnimatePresence>
+            {langPicker && (
+              <div className="absolute w-full p-1 mt-4 bg-pink dark:bg-white-900 rounded-md text-black-900">
+                {languages.map((currentLanguage, i) => (
+                  <>
+                    <button
+                      className="block w-full px-2 py-1 text-left hover:bg-white-700 rounded-md transition-colors focus:outline-none"
+                      key={currentLanguage.id}
+                      onClick={toggleLanguage(currentLanguage.id)}
+                    >
+                      <p className={clsx("inline")}>{currentLanguage.name} </p>
+                      <span role="img" aria-label="flag">
+                        {currentLanguage.flag}
+                      </span>
+                    </button>
+                    {i !== languages.length - 1 && (
+                      <div className="my-1 bg-white-700 h-0.5" />
+                    )}
+                  </>
+                ))}
+              </div>
+            )}
             <span className="absolute top-0 right-0 flex items-center justify-center w-10 h-full text-center pointer-events-none">
               <svg
                 fill="none"
