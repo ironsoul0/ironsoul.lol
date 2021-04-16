@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import { Container, Logo } from "components";
+import { motion } from "framer-motion";
 import { useOnClickOutside } from "lib";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -19,6 +20,19 @@ enum Languages {
   en = "en",
   ru = "ru",
 }
+
+const languages = [
+  {
+    id: Languages.ru,
+    name: "RU",
+    flag: "🇷🇺",
+  },
+  {
+    id: Languages.en,
+    name: "EN",
+    flag: "🇺🇸",
+  },
+];
 
 export const Header: FC = () => {
   const [playOnDark] = useSound("/sounds/dark-on.mp3");
@@ -96,37 +110,40 @@ export const Header: FC = () => {
           </button>
           <div className="relative ml-2 md:ml-4" ref={ref}>
             <button
-              className="py-2 pl-3 text-base font-medium uppercase rounded appearance-none pr-9 focus:outline-none focus:ring-2 focus:ring-blue-700 bg-none"
+              className="py-2 pl-4 text-base font-medium uppercase rounded appearance-none pr-9 focus:outline-none focus:ring-2 focus:ring-blue-700 bg-none"
               onClick={turnOnLangPicker}
             >
               {language}
             </button>
-            <div
-              className={clsx(
-                "absolute w-20 p-1 mt-4 bg-pink dark:bg-white-900 rounded-md text-black-900 transition-all",
-                !langPicker && "opacity-0 -mt-1"
-              )}
+            <motion.div
+              className="absolute w-full p-1 mt-4 bg-pink dark:bg-white-900 rounded-md text-black-900 transition-all"
+              initial="hidden"
+              animate={langPicker ? "visible" : "hidden"}
+              variants={{
+                hidden: {
+                  opacity: 0,
+                  y: -2,
+                },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                },
+              }}
+              transition={{ duration: 0.2 }}
             >
-              <button
-                className="block w-full px-2 py-1 text-left hover:bg-white-700 rounded-md transition-colors focus:outline-none"
-                onClick={toggleLanguage(Languages.ru)}
-              >
-                <p className="inline">RU </p>
-                <span role="img" aria-label="flag">
-                  🇷🇺
-                </span>
-              </button>
-              <div className="my-1 bg-white-700 h-0.5" />
-              <button
-                className="block w-full px-2 py-1 text-left focus:outline-none hover:bg-white-700 rounded-md transition-colors"
-                onClick={toggleLanguage(Languages.en)}
-              >
-                <p className="inline">EN </p>
-                <span role="img" aria-label="flag">
-                  🇺🇸
-                </span>
-              </button>
-            </div>
+              {languages.map((currentLanguage) => (
+                <button
+                  className="block w-full px-2 py-1 text-left hover:bg-white-700 rounded-md transition-colors focus:outline-none"
+                  key={currentLanguage.id}
+                  onClick={toggleLanguage(currentLanguage.id)}
+                >
+                  <p className={clsx("inline")}>{currentLanguage.name} </p>
+                  <span role="img" aria-label="flag">
+                    {currentLanguage.flag}
+                  </span>
+                </button>
+              ))}
+            </motion.div>
             <span className="absolute top-0 right-0 flex items-center justify-center w-10 h-full text-center pointer-events-none">
               <svg
                 fill="none"
