@@ -14,25 +14,20 @@ import Head from "next/head";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import React, { useEffect, useState } from "react";
-import useSound from "use-sound";
 
 const IndexPage = () => {
   const [citation, setCitation] = useState(true);
   const [main, setMain] = useState(false);
-  const [playNinja] = useSound("/sounds/ninja.mp3");
   const { t } = useTranslation("common");
 
   useEffect(() => {
     const ids = [
-      setTimeout(() => {
-        playNinja();
-        setCitation(false);
-      }, 4800),
+      setTimeout(() => setCitation(false), 4800),
       setTimeout(() => setMain(true), 5700),
     ];
 
     return () => ids.forEach((id) => clearTimeout(id));
-  }, [playNinja, setCitation]);
+  }, [setCitation]);
 
   return (
     <>
