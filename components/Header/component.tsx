@@ -131,17 +131,22 @@ export const Header: FC = () => {
               }}
               transition={{ duration: 0.2 }}
             >
-              {languages.map((currentLanguage) => (
-                <button
-                  className="block w-full px-2 py-1 text-left hover:bg-white-700 rounded-md transition-colors focus:outline-none"
-                  key={currentLanguage.id}
-                  onClick={toggleLanguage(currentLanguage.id)}
-                >
-                  <p className={clsx("inline")}>{currentLanguage.name} </p>
-                  <span role="img" aria-label="flag">
-                    {currentLanguage.flag}
-                  </span>
-                </button>
+              {languages.map((currentLanguage, i) => (
+                <>
+                  <button
+                    className="block w-full px-2 py-1 text-left hover:bg-white-700 rounded-md transition-colors focus:outline-none"
+                    key={currentLanguage.id}
+                    onClick={toggleLanguage(currentLanguage.id)}
+                  >
+                    <p className={clsx("inline")}>{currentLanguage.name} </p>
+                    <span role="img" aria-label="flag">
+                      {currentLanguage.flag}
+                    </span>
+                  </button>
+                  {i !== languages.length - 1 && (
+                    <div className="my-1 bg-white-700 h-0.5" />
+                  )}
+                </>
               ))}
             </motion.div>
             <span className="absolute top-0 right-0 flex items-center justify-center w-10 h-full text-center pointer-events-none">
