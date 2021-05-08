@@ -2,9 +2,10 @@ import { Container, MediaIcon } from "components";
 import { motion } from "framer-motion";
 import { useTranslation } from "next-i18next";
 import React, { FC } from "react";
-import { FaGithub, FaTelegram, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTelegram, FaTwitter } from "react-icons/fa";
 
 import { HandWave } from "./libs/HandWave";
+import { HeroLink } from "./libs/HeroLink";
 
 export const Hero: FC = () => {
   const { t } = useTranslation("common");
@@ -42,61 +43,10 @@ export const Hero: FC = () => {
       <p className="text-xl font-bold tracking-normal md:text-3xl text-black-700 dark:text-white-700">
         {t("hero.p0")}
         <br />
-        {t("hero.p1")}{" "}
-        <motion.a
-          href="https://alabs.team"
-          target="_blank"
-          className="relative text-blue-700"
-          whileHover="visible"
-          initial="hidden"
-        >
-          @alabs.team
-          <motion.span
-            className="absolute bottom-0 left-0 w-full bg-blue-700 h-0.5"
-            variants={{
-              hidden: {
-                opacity: 0,
-                y: -5,
-              },
-              visible: {
-                opacity: 1,
-                y: 0,
-              },
-            }}
-            transition={{
-              damping: 2,
-              mass: 3,
-            }}
-          />
-        </motion.a>
+        {t("hero.p1")} <HeroLink title="Citadel" href="https://citadel.com" />
         <br />
-        {t("hero.p2")}{" "}
-        <motion.a
-          href="https://citadel.com"
-          target="_blank"
-          className="relative text-blue-700"
-          whileHover="visible"
-          initial="hidden"
-        >
-          @Citadel
-          <motion.span
-            className="absolute bottom-0 left-0 w-full bg-blue-700 h-0.5"
-            variants={{
-              hidden: {
-                opacity: 0,
-                y: -5,
-              },
-              visible: {
-                opacity: 1,
-                y: 0,
-              },
-            }}
-            transition={{
-              damping: 2,
-              mass: 3,
-            }}
-          />
-        </motion.a>
+        {t("hero.p2")} <HeroLink title="Yandex" href="https://yandex.ru" />{" "}
+        {t("and")} <HeroLink title="alabs.team" href="https://alabs.team" />
       </p>
       <div className="flex mt-8">
         <MediaIcon
@@ -107,6 +57,11 @@ export const Hero: FC = () => {
         <MediaIcon
           icon={<FaTelegram className="w-6 h-6 md:w-7 md:h-7" />}
           href="https://t.me/ironsoul0"
+          className="mr-4"
+        />
+        <MediaIcon
+          icon={<FaLinkedin className="w-6 h-6 md:w-7 md:h-7" />}
+          href="https://www.linkedin.com/in/ironsoul/"
           className="mr-4"
         />
         <MediaIcon

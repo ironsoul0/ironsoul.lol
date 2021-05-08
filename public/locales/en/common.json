@@ -3,8 +3,8 @@
   "hero": {
     "title": "Hi, I'm Timka!",
     "p0": "Full-stack ninja, student, indie hacker",
-    "p1": "Currently working full-time at",
-    "p2": "Incoming SWE Intern at",
+    "p1": "Currently SWE Intern at",
+    "p2": "Previously",
     "des0": "I am a rising junior at Nazarbayev University majoring in CS.",
     "des1": "I enjoy creating high-quality software products with a complex logic behind it.",
     "des2": "My technology stack includes React, TypeScript and Golang.",
@@ -43,5 +43,6 @@
     "content": "Ninjas are not born, they are made",
     "author": "カンフー・パンダ"
   },
-  "covid19": "Postponed due to Covid-19"
+  "covid19": "Postponed due to Covid-19",
+  "and": "and"
 }

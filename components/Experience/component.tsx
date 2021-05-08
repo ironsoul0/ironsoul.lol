@@ -39,7 +39,7 @@ export const Experience: FC = () => {
       {
         title: "Frontend Engineer",
         place: "alabs.team, Almaty",
-        date: `Jan 2021 - ${t("currently")}`,
+        date: `Jan 2021 - May 2021`,
       },
       {
         title: "SWE Intern",
