@@ -56,7 +56,7 @@ export const Hero: FC = () => {
         />
         <MediaIcon
           icon={<FaTelegram className="w-6 h-6 md:w-7 md:h-7" />}
-          href="https://t.me/ironsoul0"
+          href="https://t.me/iamironsoul"
           className="mr-4"
         />
         <MediaIcon
