@@ -67,11 +67,11 @@ export const ProjectCard: FC<Props> = ({
           <MediaIcon
             icon={<FaGithub className="w-6 h-6" />}
             href={githubLink}
-            className="mr-4"
           />
           <MediaIcon
             icon={<OutIcon className="w-6 h-6 stroke-current" />}
             href={externalLink}
+            className="hidden"
           />
         </div>
       </div>

@@ -43,10 +43,11 @@ export const Hero: FC = () => {
       <p className="text-xl font-bold tracking-normal md:text-3xl text-black-700 dark:text-white-700">
         {t("hero.p0")}
         <br />
-        {t("hero.p1")} <HeroLink title="Citadel" href="https://citadel.com" />
+        {t("hero.p1")}{" "}
+        <HeroLink title="JumpCrypto" href="https://jumpcrypto.com/" />
         <br />
         {t("hero.p2")} <HeroLink title="Yandex" href="https://yandex.ru" />{" "}
-        {t("and")} <HeroLink title="alabs.team" href="https://alabs.team" />
+        {t("and")} <HeroLink title="Citadel" href="https://citadel.com" />
       </p>
       <div className="flex mt-8">
         <MediaIcon

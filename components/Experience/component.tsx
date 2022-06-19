@@ -26,12 +26,6 @@ export const Experience: FC = () => {
         date: "Jun 2019 - Aug 2019",
       },
       {
-        title: "STEP Intern",
-        place: "Google, Zurich",
-        date: t("covid19"),
-        cancelled: true,
-      },
-      {
         title: "Ethereum Foundation",
         place: "Blockchain Intern, Remote",
         date: "Jun 2020 - Aug 2020",
@@ -46,8 +40,13 @@ export const Experience: FC = () => {
         place: "Citadel, Hong Kong",
         date: "May 2021 - Aug 2021",
       },
+      {
+        title: "SWE Intern",
+        place: "Jump Crypto, Singapore",
+        date: "May 2022 - Current",
+      },
     ],
-    [t]
+    []
   );
 
   useEffect(() => {
