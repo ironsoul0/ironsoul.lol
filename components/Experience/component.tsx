@@ -26,8 +26,8 @@ export const Experience: FC = () => {
         date: "Jun 2019 - Aug 2019",
       },
       {
-        title: "Ethereum Foundation",
-        place: "Blockchain Intern, Remote",
+        title: "Blockchain Intern",
+        place: "Ethereum Foundation, Remote",
         date: "Jun 2020 - Aug 2020",
       },
       {
